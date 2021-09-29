@@ -1,0 +1,43 @@
+.example-header-image {
+    background-image: url('https://i.pinimg.com/564x/26/23/5a/26235aed37af17a5ad19dd0f42250589.jpg');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.mat-card-avatar {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-color: #aaaaaa;
+   border-width: 1px;
+   border-style: solid;
+    position: absolute;
+}
+
+ .BtnGuardar{
+    background-color:#9c27b0;
+    color:white;
+    border-radius: 100%;position:absolute ;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.16);
+    height: 4rem;
+    margin-left: 3%;
+    margin-top: 1%;
+} 
+
+.ModalUsuarios{
+    width: 1530px;
+}
+.CardAVATAR{
+    width: 90%;margin-left: 5%;margin-top: 15%;
+}
+.CardImagen{
+    margin-top: -15%;margin-left: 41%;
+}
+.TamañoGrande{
+    width: 500px;
+}
+.TamañoPeque{
+    width: 250px;
+}

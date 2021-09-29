@@ -1,0 +1,32 @@
+/* Estilo de la imagen en el avatar*/
+.example-header-image {
+    background-image: url('../../../../assets/FotoPer.jpg');
+    background-size: cover;
+    cursor: pointer;
+}
+/* Estilo del avatar */
+.mat-card-avatar {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-color: #aaaaaa;
+   border-width: 1px;
+   border-style: solid;
+    position: absolute;
+}
+/* Estilo boton guardar del modal */
+ .BtnGuardar{
+    background-color:#c99a64;
+    color:white;
+    border-radius: 100%;position:absolute ;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.16);
+    height: 4rem;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+/* tamaño del modal */
+.ModalUsuarios{
+    width: 1530px;
+}

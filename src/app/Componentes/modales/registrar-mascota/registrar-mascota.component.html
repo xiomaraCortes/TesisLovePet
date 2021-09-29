@@ -1,0 +1,93 @@
+<!-- Boton de cerrar modal -->
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-dialog-actions>
+<!-- Contenido del modal -->
+<mat-dialog-content class="ModalUsuarios">
+    <div class="card card-stats CardAVATAR">
+        <div class="card-header">
+            <div mat-card-avatar class="example-header-image CardImagen">
+            </div>
+        </div>
+        <mat-card-footer class="Cuerpo">
+            <mat-tab-group mat-align-tabs="center" animationDuration="2000ms">
+                <mat-tab label="INFORMACIÓN" mat-align-tabs="center">
+                    <mat-grid-list cols="1" rowHeight="100px">
+                        <mat-grid-tile>
+                            <mat-form-field class="TamañoGrande">
+                                <input matInput placeholder="Nombres" name="nombre" [(ngModel)]="nombre">
+                            </mat-form-field>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                    <mat-grid-list cols="4" rowHeight="100px">
+                        <mat-grid-tile>
+                            <mat-form-field class="TamañoPeque">
+                                <input matInput placeholder="Número de documento" name="documento" [(ngModel)]="documento">
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <mat-form-field class="TamañoPeque">
+                                <mat-label>Fecha Nacimiento</mat-label>
+                                <input matInput [matDatepicker]="picker" (focus)="picker.open()"
+                                    placeholder="Fecha Nacimiento" readonly name="fechanaciomiento" [(ngModel)]="fechanaciomiento">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            </mat-form-field>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <mat-form-field class="TamañoPeque">
+                                <mat-label>Raza</mat-label>
+                                <mat-select name="raza" [(ngModel)]="raza">
+                                    <mat-option *ngFor="let ra of raidrazas" [value]="ra.IdRaza">
+                                        {{ra.Descripcion}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <mat-form-field class="TamañoPeque">
+                                <mat-label>Genero</mat-label>
+                                <mat-select name="genero" [(ngModel)]="genero">
+                                    <mat-option [value]="1">
+                                        Macho
+                                    </mat-option>
+                                    <mat-option [value]="2">
+                                        Hembra
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <mat-form-field class="TamañoPeque">
+                                <mat-label>Color</mat-label>
+                                <mat-select name="color" [(ngModel)]="color">
+                                    <mat-option *ngFor="let co of raidcolores" [value]="co.IdColor">
+                                        {{co.Descripcion}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <mat-form-field class="TamañoPeque">
+                                <input matInput placeholder="Peso(Kg)" name="peso" [(ngModel)]="peso">
+                            </mat-form-field>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <mat-form-field class="TamañoPeque">
+                                <input matInput placeholder="Estatura(Cm)" name="estatura" [(ngModel)]="estatura">
+                            </mat-form-field>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-footer>
+    </div>
+</mat-dialog-content>
+<!-- Boton guardar datos del Modal -->
+<mat-dialog-actions align="end">
+    <button mat-raised-button matTooltip="Guardar" class="BtnGuardar" (click)="Guardar()">
+        <mat-icon>save</mat-icon>
+    </button>
+</mat-dialog-actions>

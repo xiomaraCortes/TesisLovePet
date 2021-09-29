@@ -1,0 +1,75 @@
+/* Estilo tarjeta Notificaciones */
+.CardNoti {
+  cursor: pointer;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14),
+    0 7px 10px -5px rgb(250, 103, 103);
+}
+/* Animacion tarjeta Notificaciones */
+.CardNoti:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.16);
+}
+/* Estilo tarjeta veterinarias */
+.CardCon {
+  cursor: pointer;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px #2196f3;
+}
+/* Animacion tarjeta veterinarias */
+.CardCon:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.16);
+}
+/* Estilo tarjeta Perfil mascota */
+.CardPer {
+  cursor: pointer;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14),
+    0 7px 10px -5px rgba(250, 103, 218, 0.671);
+}
+/* Animacion tarjeta Perfil mascota */
+.CardPer:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.16);
+}
+/* Estilo tarjeta blog */
+.CadBlo {
+  cursor: pointer;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px #ff9800;
+}
+/* Animacion tarjeta blog */
+.CadBlo:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.16);
+}
+/* Estilo para el titulo de las tarjetas */
+.TITULO {
+  text-align: center;
+  font-weight: bolder;
+}
+/* Estilo para el boton de agregar una mascota */
+.ButtonAdd {
+  margin-left: 88%;
+  margin-top: -5%;
+  position: absolute;
+  height: 4rem;
+  border-radius: 100%;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.16);
+  background-color: #9c27b0;
+  color: azure;
+}
+/* Estilo para el boton de notificaciones sobre la tarjeta notificaciones */
+.BtnNoti {
+  margin-left: 88%;
+  margin-top: -5%;
+  position: absolute;
+  height: 4rem;
+  border-radius: 100%;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ff4081;
+  color: azure;
+}
+/* Estilo iconos  */
+.iconos {
+  color: #9c27b0;
+}

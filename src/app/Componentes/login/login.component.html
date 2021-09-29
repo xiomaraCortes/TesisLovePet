@@ -1,0 +1,13 @@
+<!-- Front de login -->
+<div class="container" >
+    <div class="login-container">
+        <div id="output"></div>
+        <div class="avatar"></div>
+        <div class="form-box">
+            <input  placeholder="EMAIL" name="email" [(ngModel)]="email">
+            <input type="password" placeholder="CONTRASEÑA" name="pass" [(ngModel)]="pass">
+            <button class="btnIngresar" mat-stroked-button type="submit" (click)="Login()">INGRESAR</button><br>
+            <button class="btnCrear" mat-button style="text-decoration:underline;" type="submit" (click)="Crear()">REGISTRARSE</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="card CardContenido" *ngIf="Estado">
+    <mat-grid-list cols="20" rowHeight="70px">
+        <mat-grid-tile>
+            <button mat-button (click)="BtnControl()" matTooltip="Inicio" class="BotonesMenu">
+                <i class="material-icons">dashboard</i>
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button mat-button (click)=BtnPerfil() matTooltip="Mi perfil" class="BotonesMenu">
+                <i  class="material-icons">account_circle</i>
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button mat-button (click)=BtnBlog() matTooltip="Blog" class="BotonesMenu" >
+                <i class="material-icons">search</i>
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile>
+            <button mat-button matTooltip="Notificaciones" class="BotonesMenu">
+                <i matBadge="15" matBadgeColor="warn" class="material-icons">notifications_active</i>
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button (click)=BtnCerrar() mat-button matTooltip="Cerrar sesión"  class="BotonesMenu">
+                <i  class="material-icons">keyboard_tab</i>
+            </button>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+<router-outlet></router-outlet>

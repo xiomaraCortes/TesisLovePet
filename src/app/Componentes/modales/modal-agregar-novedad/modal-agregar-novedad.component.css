@@ -1,0 +1,23 @@
+/* Estilo modal usuario */
+.ModalUsuarios{
+    width: 1530px;
+}
+/*Tamaño campos del modal */
+.TamañoGrande{
+    width: 700px;
+}
+/*Tamaño campos modal */
+.TamañoPeque{
+    width: 250px;
+}
+/*
+Estilo boton guardar modal */
+.BtnGuardar{
+    background-color:#f12b26;
+    color:white;
+    border-radius: 100%;position:absolute ;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.16);
+    height: 4rem;
+    margin-left: 2%;
+    margin-top: 1%;
+}

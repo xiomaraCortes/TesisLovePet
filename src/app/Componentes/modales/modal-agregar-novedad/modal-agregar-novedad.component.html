@@ -1,0 +1,44 @@
+<!-- Boton cerrar el modal -->
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+<!-- </mat-dialog-actions>
+Contenido del modal -->
+<mat-dialog-content class="ModalUsuarios">
+    <mat-card-footer class="Cuerpo">
+        <mat-grid-list cols="2" rowHeight="100px">
+            <mat-grid-tile>
+                <mat-form-field class="TamañoPeque">
+                    <mat-label>Tipo de novedad</mat-label>
+                    <mat-select  [(ngModel)]="novedad" name="novedad">
+                        <mat-option *ngFor="let nov of raidnovedades" [value]="nov.IdNovedad">
+                            {{nov.Descripcion}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="TamañoPeque">
+                    <input matInput placeholder="Descripción" name="descripcion" [(ngModel)]="descripcion">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list cols="1" rowHeight="100px">
+            <mat-grid-tile>
+                <mat-form-field class="TamañoGrande">
+                    <mat-label>Observaciones</mat-label>
+                    <input matInput #message maxlength="250" name="observacion" [(ngModel)]="observacion">
+                    <mat-hint align="start"><strong>Escriba una observación de la novedad</strong> </mat-hint>
+                    <mat-hint align="end">{{message.value.length}} / 250</mat-hint>
+                  </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-footer>
+</mat-dialog-content>
+<!-- Boton guardar el modal -->
+<mat-dialog-actions align="end">
+    <button mat-raised-button matTooltip="Guardar" class="BtnGuardar" (click)="Guardar()">
+        <mat-icon>save</mat-icon>
+    </button>
+</mat-dialog-actions>

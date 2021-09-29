@@ -1,0 +1,149 @@
+<!-- Front de la pagina principal -->
+<div class="content" style="margin: 10px,10px,10px,10px,;">
+    <div class="container-full">
+        <div class="row">
+          <!-- Tarjetas del inicio -->
+          <!-- Tarjeta de notificacion -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats CardNoti">
+                    <div class="card-header card-header-icon">
+                        <div class="card-icon"
+                            style="background-color: #ff4081;box-shadow:0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(250, 103, 218, 0.671);">
+                            <i class="material-icons">notification_important</i>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-category">NOTIFICACIONES</p>
+                    </div>
+                    <button mat-raised-button class="BtnNoti">
+                        <label style="color: white;font-size: 18px;">15</label>
+                    </button>
+                </div>
+            </div>
+             <!-- Tarjeta de veterinarias -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats CardCon" (click)="Vete()">
+                    <div class="card-header card-header-icon">
+                        <div class="card-icon"
+                            style="background-color: #007889;box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px #2196f3">
+                            <i class="material-icons">local_hospital</i>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-category">VETERINARIAS</p>
+                    </div>
+                </div>
+            </div>
+             <!-- Tarjeta de Perfil mascotas -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats CardPer">
+                    <div class="card-header card-header-primary card-header-icon">
+                        <div class="card-icon"
+                            style="box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(250, 103, 218, 0.671);">
+                            <i class="material-icons">pets</i>
+                        </div>
+                        <h3 class="card-title"></h3>
+                        <label style="font-size: 18px; color: #9c27b0; margin-right: 4%;margin-top: 5%;">Número de
+                            mascotas:</label>
+                        <label style="font-size: 18px; color: black;margin-right: 15%;">{{totalmas}}</label>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-category">
+                            PERFIL MASCOTA</p>
+                    </div>
+                     <!-- Boton agregar mascota -->
+                    <button mat-raised-button class="ButtonAdd" (click)="Agregar()" matTooltip="Agregar">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <!-- Tarjeta de blog -->
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats CadBlo" (click)="Blog()">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon"
+                            style="box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px #ff9800;">
+                            <i class="material-icons">search</i>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-category">BLOG</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <!-- tabla de las mascotas de usuario -->
+            <div class="col-lg-6 col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <h4 class="card-title TITULO">MASCOTAS REGISTRADAS</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                            <thead class="text-primary">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Raza</th>
+                                    <th>Genero</th>
+                                    <th>Color</th>
+                                    <th>Altura(Cm)</th>
+                                    <th>Peso(Kg) </th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let tab of raidmascotas">
+                                    <td>{{tab.IdMascota}}</td>
+                                    <td>{{tab.Nombre}}</td>
+                                    <td>{{tab.Raza}}</td>
+                                    <td>{{tab.Genero}}</td>
+                                    <td>{{tab.Color}}</td>
+                                    <td>{{tab.Altura}}</td>
+                                    <td>{{tab.Peso}}</td>
+                                    <td> <button class="iconos" mat-icon-button matTooltip="Ver"
+                                            (click)="Mascota(tab.IdMascota)">
+                                            <mat-icon>remove_red_eye</mat-icon>
+                                        </button></td>
+                                    <td> <button class="iconos" mat-icon-button matTooltip="Eliminar"
+                                            (click)="borrar(tab.IdMascota)">
+                                            <mat-icon>delete</mat-icon>
+                                        </button></td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Grafica -->
+            <div class="col-lg-6 col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title TITULO">GRÁFICAS NOVEDADES POR MASCOTAS</h4>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <div class="card-body">
+                            <div>
+                                <div>
+                                    <div style="display: block">
+                                        <canvas id="canvas">
+                                            {{chart}}
+                                        </canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

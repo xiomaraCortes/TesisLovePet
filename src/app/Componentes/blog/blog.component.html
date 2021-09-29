@@ -1,0 +1,34 @@
+<!-- Boton de buscar -->
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div id="custom-search-input">
+        <div class="input-group">
+          <input matInput  class="search-query form-control" placeholder="BUSCAR" [(ngModel)]="searchText"
+            style="text-align:center;" />
+          <span class="input-group-btn">
+            <button type="button" disabled>
+              <span class="fa fa-search"></span>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <mat-grid-list cols="2" rowHeight="600px" style=" width: 1000px; ">
+      <mat-grid-tile *ngFor="let blog of arrayblog | filtro:searchText">
+        <div class="card-content" (click)="link(blog.Link)">
+          <div class="card-img">
+            <img src="{{blog.Imagen}}" alt="">
+            <span>
+              <h4>{{blog.Categoria}}</h4>
+            </span>
+          </div>
+          <div class="card-desc">
+            <h3>{{blog.Nombre}}</h3>
+            <p>{{blog.Cuerpo}}</p>
+            <a (click)="link(blog.Link)" class="btn-card">Ver más</a>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>

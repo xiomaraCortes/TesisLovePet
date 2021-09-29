@@ -1,0 +1,114 @@
+  <!-- Boton cerrar modal -->
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-dialog-actions>
+<!-- Contenido del modal -->
+<mat-dialog-content class="ModalUsuarios">
+    <div class="card card-stats" style="width: 90%;margin-left: 5%;margin-top: 15%;">
+        <div class="card-header">
+            <div mat-card-avatar class="example-header-image" style="margin-top: -15%;margin-left: 41%;">
+            </div>
+        </div>
+        <mat-grid-list cols="4" rowHeight="100px">
+            <mat-grid-tile>
+                <mat-form-field style="width: 50%;">
+                    <input required matInput placeholder="Nombres" name="Nombres" [(ngModel)]="Nombres">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field style="width: 50%;">
+                    <input required matInput placeholder="Apellidos" name="Apellidos" [(ngModel)]="Apellidos">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field style="width: 50%;">
+                    <input required matInput placeholder="Telefono" name="Telefono" [(ngModel)]="Telefono">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field style="width: 50%;">
+                    <input required matInput placeholder="Celular" name="Celular" [(ngModel)]="Celular">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list cols="4" rowHeight="100px">
+            <mat-grid-tile>
+                <mat-form-field>
+                    <mat-label>Tipo documento</mat-label>
+                    <mat-select required name="TipoDoc" [(ngModel)]="TipoDoc">
+                        <mat-option *ngFor="let doc of raiddocumentos" [value]="doc.IdTipoDocumento">
+                            {{doc.Descripcion}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field style="width: 50%;">
+                    <input required matInput placeholder="Número de documento" name="documento" [(ngModel)]="documento">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field style="width: 300px;">
+                    <mat-label>Fecha Nacimiento</mat-label>
+                    <input required matInput [matDatepicker]="picker" (focus)="picker.open()" name="fechanacimiento" [(ngModel)]="fechanacimiento"
+                        placeholder="Fecha Nacimiento" readonly>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                </mat-form-field>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="TamañoPequeño">
+                    <mat-label>Genero</mat-label>
+                    <mat-select name="genero" [(ngModel)]="idgenero">
+                        <mat-option [value]="1">
+                            Mujer
+                        </mat-option>
+                        <mat-option [value]="2">
+                            Hombre
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="example-full-width" style="width: 70%;">
+                    <input required matInput placeholder="Correo" name="email" [(ngModel)]="email">
+                    <mat-icon style="position: absolute;">mail_outline</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="example-full-width" style="width: 50%;">
+                    <mat-label>Barrio</mat-label>
+                    <mat-select required name="barrio" [(ngModel)]="barrio" >
+                        <mat-option *ngFor="let ba of raidbarrios" [value]="ba.IdBarrio">
+                            {{ba.Descripcion}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field class="example-full-width" style="width: 50%;">
+                    <input required matInput placeholder="Dirección" name="direccion" [(ngModel)]="direccion">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field style="width: 50%;">
+                    <input required matInput type="password" placeholder="Contraseña" name="pass" [(ngModel)]="pass">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field style="width: 50%;">
+                    <input required matInput type="password" placeholder="Contraseña" name="pass2" [(ngModel)]="pass2">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+    </div>
+</mat-dialog-content>
+<!-- Boton guardar modal -->
+<mat-dialog-actions align="end">
+    <button mat-raised-button matTooltip="Guardar" class="BtnGuardar" (click)="Guardar()">
+        <mat-icon>save</mat-icon>
+    </button>
+</mat-dialog-actions>

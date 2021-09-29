@@ -1,0 +1,52 @@
+<!-- Front veterinarias -->
+<div class="content">
+        <div class="card CardTabla">
+          <!-- Encabezado de la tabla -->
+            <div   class="card-header card-header-tabs card-header-warning Carfiltro">
+                <mat-grid-list cols="1" rowHeight="60px">
+                    <mat-grid-tile>
+                      <div id="custom-search-input">
+                        <div class="input-group">
+                          <input matInput  class="search-query form-control" placeholder="BUSCAR" [(ngModel)]="searchText"
+                            style="text-align:center;width: 800px" />
+                          <span class="input-group-btn">
+                            <button type="button" disabled>
+                              <span class="fa fa-search"></span>
+                            </button>
+                          </span>
+                        </div>
+                      </div>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </div>
+            <!-- Contenido de la tabla -->
+            <div class="card-body table-responsive">
+                <table class="table table-hover" >
+                    <thead class="LetraRojoClaro">
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Barrio</th>
+                            <th>Dirección</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vete of veterinarias | filtro:searchText">
+                            <td>{{vete.IdVeterinaria}}</td>
+                            <td>{{vete.Nombre}}</td>
+                            <td>{{vete.Barrio}}</td>
+                            <td>{{vete.Direccion}}</td>
+                            <td>
+                                <button class="iconos" mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="ubicacion(vete.Ubicacion)">
+                                    <mat-icon>add_location</mat-icon>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+
+
