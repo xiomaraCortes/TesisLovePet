@@ -17,7 +17,7 @@ export class RegistrarMascotaComponent implements OnInit {
   raza
   genero
   color
-  estatura
+  estatura 
   peso
   barrio
   direccion

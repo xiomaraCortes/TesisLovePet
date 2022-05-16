@@ -73,3 +73,13 @@
 .iconos {
   color: #9c27b0;
 }
+
+/* .Grafica{
+  height: 350px;
+} */
+
+.Grafica-contenido{
+  width: 450px;
+  height: 290px;
+  display: block;
+}

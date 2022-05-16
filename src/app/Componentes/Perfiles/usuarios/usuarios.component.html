@@ -1,59 +1,56 @@
 <!-- Front para usuarios -->
 <mat-card class="perfil-card">
-    <mat-card-header class="Portada">
-    </mat-card-header>
-    <div mat-card-avatar class="perfil-header">
-        <div mat-card-avatar class="example-header-image">
-        </div>
-        <!-- <div class="carnet">
+    <div class="portada-card">
+        <div mat-card-avatar class="avatar-card"></div>
+         <div class="carnet">
             <div class="letras">
-                <mat-card-title>
-                    <a>
-
-                    </a>
-                </mat-card-title>
-                 <label class="labels">{{Nombres}} {{Apellidos}}</label><br>
-                <label  class="labels">BOGOTA</label><br>
-                <label class="labels">{{barrio2}}</label><br>
-                <label  class="labels">{{direccion}}</label><br> 
+                 <label>{{Nombres}} {{Apellidos}}</label><br>
+                <label>BOGOTA</label><br>
+                <label>{{barrio2}}</label><br>
+                <label>{{direccion}}</label><br> 
             </div>
-        </div> -->
+        </div>
+    </div>  
+    <!-- Botones para editar y guardar  -->
+    <div class="botones-card" matTooltip="Editar" (click)="Editar()" *ngIf="!Eeditar">
+        <button mat-fab color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
     </div>
-    <button mat-raised-button class="Btn" matTooltip="Editar" (click)="Editar()" *ngIf="!Eeditar">
-        <mat-icon>edit</mat-icon>
-    </button>
-    <!-- Boton guardar -->
-    <button mat-raised-button class="Btn"  matTooltip="Guardar" *ngIf="!Eguardar" (click)="Guardar()">
-        <mat-icon>save</mat-icon>
-    </button>
+    <div class="botones-card" matTooltip="Editar" matTooltip="Guardar" *ngIf="!Eguardar" (click)="Guardar()">
+        <button mat-fab color="primary">
+          <mat-icon>save</mat-icon>
+        </button>
+    </div>    
+    <!-- Informacion de usuario -->
     <mat-card-footer>
         <mat-tab-group mat-align-tabs="center" animationDuration="2000ms">
             <mat-tab label="Información" mat-align-tabs="center">
-                <mat-grid-list cols="3" rowHeight="100px">
+                <mat-grid-list cols="3" rowHeight="100px" class="Contenedor-Datos">
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoGrande">
+                        <mat-form-field>
                             <input matInput placeholder="Nombres" name="Nombres" [(ngModel)]="Nombres" disabled="{{Estado}}">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoPequeño">
+                        <mat-form-field >
                             <input matInput placeholder="Apellidos" name="Apellidos" [(ngModel)]="Apellidos" disabled="{{Estado}}">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoGrande">
+                        <mat-form-field >
                             <input type="password" matInput placeholder="Contraseña" name="pass" [(ngModel)]="pass" disabled="{{Estado}}">
                         </mat-form-field>
                     </mat-grid-tile>
                 </mat-grid-list>
                 <mat-grid-list cols="3" rowHeight="100px">
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoPequeño">
+                        <mat-form-field >
                             <input type="password" matInput placeholder="Contraseña" name="pass2" [(ngModel)]="pass2" disabled="{{Estado}}">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoGrande">
+                        <mat-form-field >
                             <mat-label>Tipo documento</mat-label>
                             <mat-select required [value]="TipoDoc" name="TipoDoc" [(ngModel)]="TipoDoc" disabled="{{Estado}}">
                                 <mat-option *ngFor="let doc of raiddocumentos" [value]="doc.IdTipoDocumento" >
@@ -63,13 +60,13 @@
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoPequeño">
+                        <mat-form-field>
                             <input matInput placeholder="Número de documento" disabled name="documento" [(ngModel)]="documento">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoGrande" >
-                            <mat-label>Fecha Nacimiento</mat-label>
+                        <mat-form-field>
+                            <mat-label>Fecha de nacimiento</mat-label>
                             <input matInput [matDatepicker]="picker" (focus)="picker.open()"
                                 placeholder="Fecha Nacimiento" readonly name="fechanacimiento" [(ngModel)]="fechanacimiento" [value]="fechanacimiento" disabled="{{Estado}}">
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -77,9 +74,9 @@
                         <mat-datepicker #picker></mat-datepicker>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoPequeño">
+                        <mat-form-field>
                             <mat-label>Genero</mat-label>
-                            <mat-select [value]="genero" name="genero" [(ngModel)]="genero">
+                            <mat-select [value]="genero" name="genero" [(ngModel)]="genero" disabled="{{Estado}}">
                                 <mat-option [value]="1">
                                     Mujer
                                 </mat-option>
@@ -92,25 +89,25 @@
                 </mat-grid-list>
             </mat-tab>
             <mat-tab label="Contacto">
-                <mat-grid-list cols="3" rowHeight="100px">
+                <mat-grid-list cols="3" rowHeight="100px" class="Contenedor-Datos">
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoGrande">
+                        <mat-form-field >
                             <input matInput placeholder="Correo" name="email" [(ngModel)]="email" disabled="{{Estado}}">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoPequeño">
+                        <mat-form-field >
                             <input matInput placeholder="Telefono" name="Telefono" [(ngModel)]="Telefono" disabled="{{Estado}}">
                         </mat-form-field>
                     </mat-grid-tile>
 
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoGrande">
+                        <mat-form-field >
                             <input matInput placeholder="Celular" name="Celular" [(ngModel)]="Celular" disabled="{{Estado}}">
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoPequeño">
+                        <mat-form-field >
                             <mat-label>Barrio</mat-label>
                             <mat-select required [value]="barrio" name="barrio" [(ngModel)]="barrio" disabled="{{Estado}}">
                                 <mat-option *ngFor="let ba of raidbarrios" [value]="ba.IdBarrio">
@@ -120,7 +117,7 @@
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoGrande">
+                        <mat-form-field>
                             <input matInput placeholder="Dirección" name="direccion" [(ngModel)]="direccion" disabled="{{Estado}}">
                         </mat-form-field>
                     </mat-grid-tile>

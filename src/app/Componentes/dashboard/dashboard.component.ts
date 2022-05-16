@@ -32,9 +32,11 @@ export class DashboardComponent implements OnInit {
   }
 //Agregra mascota
   Agregar(){
+    
     const dialogConfig = new MatDialogConfig();
       dialogConfig.disableClose = true;
       dialogConfig.autoFocus = true;
+      dialogConfig.width="60%";
       const dialogRef = this.dialog.open(RegistrarMascotaComponent, dialogConfig);
       dialogRef.afterClosed().subscribe(result => {
         location.reload();
