@@ -1,8 +1,3 @@
-html,body{
-    
-    position: relative;
-    height: 90%;
-}
 
 .login-container{
     position: relative;
@@ -11,7 +6,7 @@ html,body{
     padding: 20px 40px 40px;
     text-align: center;
     background: #fff;
-    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px #666;
 }
 
 #output{
@@ -41,7 +36,8 @@ html,body{
     -webkit-transform: rotateZ(4deg);
     -moz-transform: rotateZ(4deg);
     -ms-transform: rotateZ(4deg);
-    border: 1px solid #ccc;
+    border: 1px solid grey;
+    box-shadow: 2px 2px 10px #666;
 
 }
 
@@ -59,11 +55,12 @@ html,body{
     height: 140px;
     margin: 10px auto 30px;
     border-radius: 100%;
-    border: 2px solid #aaa;
     background-size: cover;
-     background-image: url('../../../assets/avatar.jpg');
+     background-image: url('../../../assets/Perfil.png');
     background-size: cover;
     cursor: pointer;
+    border: 1px solid grey;
+    box-shadow: 2px 2px 10px #666;
 }
 
 .form-box input{
@@ -143,3 +140,5 @@ html,body{
     margin-top: 5%;
     width: 51%;
 }
+
+ 

@@ -4,7 +4,9 @@
     width: 120px;
     float:right;
 }
-
+.color{
+    background-color: #FE9C17 !important;
+}
 .perfil-card{
     width: 98%;
     margin-left: 1%;
@@ -14,7 +16,6 @@
 .portada-card {
     background-image: url('../../../../assets/Slider1.jpg');
     height: 200px;
-    /*IMPORTANTE*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +23,7 @@
   }
   
   .avatar-card {
-    background-image: url('https://i.pinimg.com/236x/2c/77/23/2c7723d1c33077d22782fd4991ad7c92.jpg');     
+    background-image: url('https://c8.alamy.com/compes/2bx8ybd/icono-de-vector-de-paw-signo-animal-de-mascota-simbolo-grafico-para-el-diseno-de-paginas-web-de-animales-domesticos-y-veterinarios-logo-app-iu-2bx8ybd.jpg');     
     /* background-image: url('../../../../assets/PerfilUsu.jpeg'); */
     background-size: cover;
     border: 1px solid grey;
