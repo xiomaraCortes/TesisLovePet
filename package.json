@@ -1,11 +1,12 @@
 {
   "name": "love-pet",
   "version": "0.0.0",
+  "webcontext": "Hosting-Tesis",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
     "test": "jest --runInBand",
+    "build": "ng build",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\""
