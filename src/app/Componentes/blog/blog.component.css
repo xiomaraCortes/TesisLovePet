@@ -116,7 +116,7 @@ a.btn-card {
     padding: 0;
 }
 
-#custom-search-input .search-query {
+#custom-search-input button {
     width:100%;
     padding-right: 3px;
     padding-left: 15px;
@@ -145,9 +145,7 @@ a.btn-card {
     z-index: 2;
 }
 
-.search-query:focus{
-    z-index: 0;
-}
+
 .card-content:hover{
   -webkit-box-shadow: 10px 10px 57px -22px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 10px 57px -22px rgba(0,0,0,0.75);

@@ -71,6 +71,7 @@ export class UsuariosComponent implements OnInit {
     this.barrio = this.data["IdBarrio"]
     this.direccion = this.data["Direccion"]
     this.barrio2 = this.data["Barrio"]
+    this.genero = this.data["IdGenero"]
   }
   // Funcion boton editar
   Editar(){

@@ -1,49 +1,52 @@
 <!-- Front perfil mascota -->
 <mat-card class="perfil-card">
-  <!-- Portada del perfil -->
-    <mat-card-header class="Portada">
+  <!-- Portada del perfil --> 
+    <mat-card-header class="portada-card">
+        <div mat-card-avatar class="avatar-card"></div>
+         <div class="carnet">
+            <div class="letras">
+                    <label class="labels">{{nombre}}</label><br>
+                    <label  class="labels" >{{edad}} AÑOS</label><br>
+                    <label  class="labels">{{barrio}}</label><br>
+                    <label  class="labels">{{direccion}}</label><br>
+                
+            </div>
+        </div>
     </mat-card-header>
     <!-- Avatar del perfil -->
-    <div mat-card-avatar class="perfil-header"> 
-        <div mat-card-avatar class="example-header-image">
-        </div>
-        <!-- Datos al lado de avatar -->
-        <!-- <div class="carnet">
-            <div class="letras">
-                <label class="labels">{{nombre}}</label><br>
-                <label  class="labels" >{{edad}} AÑOS</label><br>
-                <label  class="labels">{{barrio}}</label><br>
-                <label  class="labels">{{direccion}}</label><br>
-            </div>
-        </div> -->
-    </div>
+    
     <!-- Boton editar -->
-    <button mat-raised-button class="Btn" matTooltip="Editar" *ngIf="!Eeditar" (click)="Editar()">
-        <mat-icon>edit</mat-icon>
-    </button>
+    <div class="botones-card" matTooltip="Editar" *ngIf="!Eeditar" (click)="Editar()">
+        <button class="color" mat-fab >
+            <mat-icon>edit</mat-icon>
+        </button>
+        
+    </div>
     <!-- Boton guardar informacion -->
-    <button mat-raised-button class="Btn" matTooltip="Guardar" *ngIf="Eguardar" (click)="Guardar()">
-        <mat-icon>save</mat-icon>
-    </button>
+    <div class="botones-card" matTooltip="Guardar" *ngIf="Eguardar" (click)="Guardar()">
+        <button class="color" mat-fab >
+            <mat-icon>save</mat-icon>
+          </button>
+    </div>
     <!-- Informacion de mascotas -->
     <mat-card-footer>
         <mat-tab-group mat-align-tabs="center" animationDuration="2000ms" (selectedTabChange)="tabClick($event.index)">
             <mat-tab label="Información" mat-align-tabs="center">
                 <mat-grid-list cols="1" rowHeight="100px" class="Contenedor-Datos">
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoGrande">
+                        <mat-form-field>
                             <input class="Tamaño" matInput placeholder="Nombres" name="nombre" [(ngModel)]="nombre" disabled={{estado}}>
                         </mat-form-field>
                     </mat-grid-tile>
                 </mat-grid-list>
                 <mat-grid-list cols="3" rowHeight="100px" class="Contenedor-Datos">
                     <mat-grid-tile>
-                        <mat-form-field class="TamañoPequeño">
+                        <mat-form-field >
                             <input class="Tamaño" matInput placeholder="Número de documento" name="documento" [(ngModel)]="documento" disabled>
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field  class="TamañoGrande">
+                        <mat-form-field  >
                             <mat-label>Fecha Nacimiento</mat-label>
                             <input class="Tamaño" matInput [matDatepicker]="picker" (focus)="picker.open()"
                                 placeholder="Fecha Nacimiento" readonly name="fechanacimiento" [(ngModel)]="fechanacimiento" disabled={{estado}}>
@@ -52,7 +55,7 @@
                         <mat-datepicker #picker></mat-datepicker>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field  class="TamañoPequeño">
+                        <mat-form-field >
                             <mat-label class="Tamaño">Raza</mat-label>
                             <mat-select value="raza" name="raza" [(ngModel)]="raza" disabled={{estado}}>
                                 <mat-option *ngFor="let ra of raidrazas" [value]="ra.IdRaza">
@@ -62,7 +65,7 @@
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field  class="TamañoGrande">
+                        <mat-form-field >
                             <mat-label class="Tamaño">Genero</mat-label>
                             <mat-select value="genero" name="genero" [(ngModel)]="genero" disabled={{estado}}>
                                 <mat-option [value]="1">
@@ -75,7 +78,7 @@
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field  class="TamañoPequeño">
+                        <mat-form-field  >
                             <mat-label class="Tamaño">Color</mat-label>
                             <mat-select value="color" name="color" [(ngModel)]="color" disabled={{estado}}>
                                 <mat-option *ngFor="let co of raidcolores" [value]="co.IdColor">
@@ -85,12 +88,12 @@
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field  class="TamañoGrande">
+                        <mat-form-field  >
                             <input class="Tamaño" matInput placeholder="Peso" name="peso" [(ngModel)]="peso" disabled={{estado}}>
                         </mat-form-field>
                     </mat-grid-tile>
                     <mat-grid-tile>
-                        <mat-form-field  class="TamañoPequeño">
+                        <mat-form-field >
                             <input class="Tamaño" matInput placeholder="Estatura" name="estatura" [(ngModel)]="estatura" disabled={{estado}}>
                         </mat-form-field>
                     </mat-grid-tile>
@@ -101,10 +104,12 @@
                     <div class="container-full">
                         <div class="row">
                             <div class="card card-chart">
-                                <div class="card-header card-header-tabs card-header-primary">
-                                    <button mat-raised-button class="botones-card" matTooltip="Agregar" (click)="AgregarNov()">
-                                        <mat-icon>add</mat-icon>
-                                    </button>
+                                <div class="card-header card-header-tabs card-header-info">
+                                    <div class="botones-card" matTooltip="Agregar" (click)="AgregarNov()">
+                                        <button class="color" mat-fab >
+                                            <mat-icon>add</mat-icon>
+                                          </button>
+                                    </div>
                                     <div class="nav-tabs-navigation">
                                         <div class="nav-tabs-wrapper">
                                             <h4 class="card-title">Novedades</h4>
@@ -113,7 +118,7 @@
                                 </div>
                                 <div class="card-body table-responsive">
                                     <table class="table table-hover">
-                                        <thead class="text-primary">
+                                        <thead class="text-info">
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Novedad</th>

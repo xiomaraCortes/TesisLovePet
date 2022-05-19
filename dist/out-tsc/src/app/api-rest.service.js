@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 let ApiRestService = class ApiRestService {
     constructor(http) {
         this.http = http;
-        this.urlapi = "http://localhost:3000/";
+        this.urlapi = "https://pets-co.herokuapp.com/";
     }
     Post(action, json) {
         var url = this.urlapi + action;
